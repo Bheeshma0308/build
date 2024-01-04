@@ -1,22 +1,15 @@
 pipeline {
     agent any
-    
-    // Define the Git repository URL
-    def gitRepoUrl = ''
-
-    // Define the branch to build
-    def gitBranch = 'main'
-
-    // Define the Maven goals to build the Java application
-    def mavenGoals = 'clean install'
-
+    def gitRepoUrl = 'https://github.com/Bheeshma0308/build.git'     // Define the Git repository URL
+    def gitBranch = 'master'                                         // Define the branch to build
+    def mavenGoals = 'clean install'                     // Define the Maven goals to build the Java application             
     stages {
         stage('Checkout') {
             steps {
                 // Checkout the Git repository using SSH key credentials
                 checkout([$class: 'GitSCM', 
-                          branches: [[name: master]], 
-                          userRemoteConfigs: [[url: gitRepoUrl]], 
+                          branches: [[name: 'master']], 
+                          userRemoteConfigs: [[url:'https://github.com/Bheeshma0308/build.git']], 
                           extensions: [[$class: 'CheckoutOption', timeout: 60], [$class: 'CloneOption', sshUserPrivateKey: [credentialsId: 'your-ssh-credentials-id']]]])
             }
         }
@@ -32,7 +25,7 @@ pipeline {
         }
 
         // Add additional stages for testing, deployment, etc.
-
+            
         stage('Archive Artifacts') {
             steps {
                 // Archive the built artifacts (e.g., JAR file)
@@ -40,7 +33,7 @@ pipeline {
             }
         }
     }
-
+    
     post {
         success {
             // Additional actions on build success
