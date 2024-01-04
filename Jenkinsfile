@@ -9,7 +9,7 @@ pipeline {
                 // Checkout the Git repository using SSH key credentials
                 checkout([$class: 'GitSCM', 
                           branches: [[name: master]], 
-                          userRemoteConfigs: [[url: github.com/Bheeshma0308/build.git]],
+                          userRemoteConfigs: [[url: https://github.com/Bheeshma0308/build.git ]],
                           extensions: [[$class: 'CheckoutOption', timeout: 60], [$class: 'CloneOption', sshUserPrivateKey: [credentialsId: 'your-ssh-credentials-id']]]])
             }
         }
