@@ -2,7 +2,7 @@ pipeline {
     agent any
  
     stages {
-        stage('Clone Repository') {
+        stage('checkout') {
             steps {
                 // Clean workspace before cloning (optional)
                 deleteDir()
