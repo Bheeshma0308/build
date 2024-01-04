@@ -1,21 +1,21 @@
 pipeline {
+    
     agent any
- 
+    
     stages {
-        stage('checkout') {
+        
+        stage('Checkout') {
+            
             steps {
-                // Clean workspace before cloning (optional)
-                deleteDir()
                 
-                // Git checkout
-checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/Bheeshma0308/build.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/Bheeshma0308/build.git']]]) // Git checkout
             }
         }
  
         stage('Build') {
             steps {
-                // Your build commands (Maven, Gradle, etc.)
-                sh 'mvn clean install'
+
+                sh 'mvn clean install'          // Your build commands              
             }
         }
     }
