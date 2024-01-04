@@ -8,7 +8,7 @@ pipeline {
                 deleteDir()
                 
                 // Git checkout
-checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: ]]])
+checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/Bheeshma0308/build.git']]])
             }
         }
  
