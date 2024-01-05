@@ -35,7 +35,7 @@ pipeline
                     sh 'az login'
 
                     // Deploy the Java application to Azure App Service
-                    sh "az webapp deploy -g ${AZURE_RESOURCE_GROUP} -n ${AZURE_WEBAPP_NAME} --type jar --src ${env.JAR_FILE_PATH}"
+                    sh "az webapp deploy -g ${AZURE_RESOURCE_GROUP} -n ${AZURE_WEBAPP_NAME} --type jar -src-path ${env.JAR_FILE_PATH}"
 
                     // Optional: Restart the Azure App Service to apply changes
                     sh "az webapp restart -g ${AZURE_RESOURCE_GROUP} -n ${AZURE_WEBAPP_NAME}"
