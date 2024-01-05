@@ -11,15 +11,11 @@ pipeline
                 checkout([$class:'GitSCM',branches:[[name: '*/master']],doGenerateSubmoduleConfigurations:false,userRemoteConfigs:[[url:'https://github.com/Bheeshma0308/build.git']]])
             }
         }
-        stage('Build') 
-        {
-            steps
-            {
-                // Change to the project directory
-                dir(PROJECT_DIR)
-                {
-                    // Run Maven build
-                    sh "mvn ${MAVEN_GOALS}"
+        stage('Build') {
+            steps {
+                script {
+                    def mvnHome = tool 'Maven'
+                    sh "${mvnHome}/bin/mvn clean install"
                 }
             }
         }
