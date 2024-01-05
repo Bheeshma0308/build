@@ -21,9 +21,11 @@ pipeline
         {
             steps
             {
+                 script {
                  sh "mvn ${MAVEN_GOALS}"
-                 jarFilePath = sh(script: 'find target -name "*.jar" | head -n 1', returnStdout: true).trim()
+                def jarFilePath = sh(script: 'find target -name "*.jar" | head -n 1', returnStdout: true).trim()
                  env.JAR_FILE_PATH = jarFilePath
+                 }
             }
         }
     stage('Deploy to Azure') {
