@@ -3,7 +3,7 @@ pipeline
     agent any
     environment {
         MAVEN_GOALS = 'clean install'        // Define the Maven goals for building the project   
-         AZURE_WEBAPP_NAME = 'mybuildappbheeshma'
+        AZURE_WEBAPP_NAME = 'mybuildappbheeshma'
         AZURE_RESOURCE_GROUP = 'mybuildappbheeshm_group'
         AZURE_PLAN_NAME = 'ASP-mybuildappbheeshmgroup-be30'
     }
@@ -21,8 +21,8 @@ pipeline
         {
             steps
             {
-                sh "mvn ${MAVEN_GOALS}"
-                 def jarFilePath = sh(script: 'find target -name "*.jar" | head -n 1', returnStdout: true).trim()
+                 sh "mvn ${MAVEN_GOALS}"
+                 jarFilePath = sh(script: 'find target -name "*.jar" | head -n 1', returnStdout: true).trim()
                  env.JAR_FILE_PATH = jarFilePath
             }
         }
