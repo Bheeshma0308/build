@@ -19,6 +19,7 @@ pipeline
             steps
             {
                 sh "mvn ${MAVEN_GOALS}"
+                sh "mvn build"
             }
         }
     }
