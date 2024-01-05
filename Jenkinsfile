@@ -1,6 +1,9 @@
 pipeline
 {
     agent any
+    environment {
+        MAVEN_GOALS = 'clean install'        // Define the Maven goals for building the project   
+    }
     stages
     {
         stage('Checkout') 
@@ -11,12 +14,11 @@ pipeline
                 checkout([$class:'GitSCM',branches:[[name: '*/master']],doGenerateSubmoduleConfigurations:false,userRemoteConfigs:[[url:'https://github.com/Bheeshma0308/build.git']]])
             }
         }
-        stage('Build') {
-            steps {
-                script {
-                    def mvnHome = tool 'Maven'
-                    sh "${mvnHome}/bin/mvn clean install"
-                }
+        stage('Build')
+        {
+            steps
+            {
+                sh "mvn ${MAVEN_GOALS}"
             }
         }
     }
