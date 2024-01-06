@@ -1,5 +1,3 @@
-package com.Bheeshma0308.demo.helloworld;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
