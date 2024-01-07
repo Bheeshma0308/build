@@ -23,20 +23,6 @@ pipeline
             }
         }
     }
-    stages 
-    {
-        stage('Compile and Run Java') 
-        {
-            steps
-            {
-                script 
-                {
-                    sh 'javac HelloWorld.java'
-                    sh 'java HelloWorld'
-                }
-            }
-        }
-    }
     post
     {
         success
