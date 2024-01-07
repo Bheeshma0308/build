@@ -23,6 +23,17 @@ pipeline
             }
         }
     }
+
+    stages {
+        stage('Run Java JAR') {
+            steps {
+                script {
+                    // Run the Java JAR file
+                    sh 'java -jar HelloWorld-1.1.jar'
+                }
+            }
+        }
+    }
     
     post
     {
