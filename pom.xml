@@ -7,6 +7,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
   <groupId>com.Bheeshma0308.demo</groupId>
   <artifactId>HelloWorld</artifactId>
   <version>1.1</version>
+  <packaging>jar</packaging>
 
   <name>Hello World</name>
   <description>Basic Java program.</description>
