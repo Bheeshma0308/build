@@ -23,9 +23,10 @@ pipeline
             }
         }
     }
+    
     post
     {
-        success
+        steps
         {
             echo "Build successful!"
         }
