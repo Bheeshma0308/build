@@ -1,4 +1,4 @@
-package com.Bheeshma0308.demo.helloworld;
+package com.Bheeshma0308.demo.HelloWorld;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
