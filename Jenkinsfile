@@ -25,7 +25,7 @@ pipeline
     }
 
     stages {
-        stage('Run Java JAR') {
+        stage('build') {
             steps {
                 script {
                     // Run the Java JAR file
