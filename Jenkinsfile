@@ -22,9 +22,6 @@ pipeline
                  sh "mvn ${MAVEN_GOALS}"
             }
         }
-    }
-
-    stages {
         stage('build') {
             steps {
                 script {
@@ -34,7 +31,6 @@ pipeline
             }
         }
     }
-    
     post
     {
         success
