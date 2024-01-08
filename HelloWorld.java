@@ -1,7 +1,7 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class HelloWorld 
+public class main 
 {
   public static void main(final String[] args)
   {
